@@ -1,11 +1,42 @@
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 
 
 
 public class TrieTest {
+	
+	@Test
+	public void testConstructor(){
+		ArrayList<String> as = new ArrayList<String>();
+		as.add("happy");
+		as.add("hallo");
+		Trie t = new Trie(as);
+		assertEquals("[hallo, happy]",t.toString());
+	}
+	
+	@Test 
+	public void testGetAllPrefix(){
+		Trie t = new Trie();
+		t.insert("att");
+		t.insert("ats");
+		assertEquals("[att, ats]",t.getAllPrefix("at").toString());
+		assertEquals("[att, ats]",t.getAllPrefix("").toString());
+		
+		t.insert("atts");
+		assertEquals("[att, atts]",t.getAllPrefix("att").toString());
+		
+		t.insert("happy");
+		t.insert("hallo");
+		assertEquals("[hallo, happy]",t.getAllPrefix("h").toString());
+		
+		assertEquals("[hallo]",t.getAllPrefix("hallo").toString());
+		
+		assertEquals(null,t.getAllPrefix("aljsdflk"));
+	}
 
 	@Test
 	public void testTrieInsert() {
@@ -30,6 +61,7 @@ public class TrieTest {
 		assertEquals("[att, acc, at]",t.toString());
 		
 		assertEquals("[tt, t]", t.root.getChild('a').getChild('t').toString());
+		
 	}
 	
 	@Test 
@@ -38,6 +70,7 @@ public class TrieTest {
 		t.insert("at");
 		t.insert("attt");
 		t.insert("acc");
+		assertTrue(t.checkStartWith(""));
 		assertFalse(t.checkStartWith("s"));
 		assertTrue(t.checkStartWith("attt"));
 		assertFalse(t.checkStartWith("an"));
@@ -45,6 +78,7 @@ public class TrieTest {
 		assertTrue(t.checkStartWith("at"));
 		assertFalse(t.checkStartWith("act"));
 	}
+	
 	
 	@Test
 	public void testTrieNode(){
