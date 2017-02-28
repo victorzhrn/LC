@@ -50,13 +50,8 @@ public class SolutionTest {
 		for (List<String> smallList : Solution.wordSquares(input)) {
 			assertTrue(output.contains(smallList));
 		}
-
-		long startTime = System.currentTimeMillis();
-
 		assertEquals(output.size(), Solution.wordSquares(input).size());
-		long endTime = System.currentTimeMillis();
-		long duration = (endTime - startTime);
-		System.out.println(duration);
+
 	}
 
 	@Test
@@ -125,10 +120,9 @@ public class SolutionTest {
 				"ship", "pixy", "suns", "cyst", "ruff", "gust", "thug", "cuif", "spry", "snib", "upby", "shut" };
 		long startTime = System.currentTimeMillis();
 		Solution.wordSquares(input);
-		
 		long endTime = System.currentTimeMillis();
 		long duration = (endTime - startTime);
-		System.out.println(duration);
+		assertTrue(duration<800);
 	}
 
 }

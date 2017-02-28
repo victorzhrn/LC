@@ -27,7 +27,6 @@ public class Solution {
 				subPrefix += s.charAt(i);
 			}
 			if (!trie.checkStartWith(subPrefix)){
-				System.out.println("jump");
 				return;
 			}
 		}
