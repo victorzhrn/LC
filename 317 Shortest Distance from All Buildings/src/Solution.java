@@ -10,7 +10,7 @@ public class Solution {
     		for (int j = 0; j < cols; j++){
     			if (grid[i][j]==1){
     				Building b = new Building(i,j,grid);
-    				System.out.println(Arrays.deepToString(b.distMatrix));
+    				
     				hs.add(b.distMatrix);
     			}
     		}
@@ -25,7 +25,6 @@ public class Solution {
     				for (int[][] m : hs){
     					finalDistMatrix[i][j]+=m[i][j];
     					if (m[i][j]== Integer.MAX_VALUE) {
-    						System.out.println("true at: "+i+","+j);
     						finalDistMatrix[i][j]=Integer.MAX_VALUE;
     						System.out.println("corrected value: "+finalDistMatrix[i][j]);
     						break;
@@ -35,7 +34,7 @@ public class Solution {
     		}
     	}
     	
-    	System.out.println(Arrays.deepToString(finalDistMatrix));
+    	
     	
     	int min = finalDistMatrix[0][0];
     	for ( int i = 0; i < rows; i++){
