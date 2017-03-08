@@ -9,6 +9,7 @@ public class Ticket {
 	
 	public void initialize(){
 		start = System.currentTimeMillis();
+		System.out.println("ticket start at: "+start);
 	}
 	
 	public void finish(){

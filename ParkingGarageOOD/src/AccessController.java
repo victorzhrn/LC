@@ -7,8 +7,11 @@ public class AccessController {
 		garage = pg;
 	}
 	
+	
 	public boolean enterCar(Vehicle v) throws Exception{
-		return garage.parkInGarage(v);
+		boolean result = garage.parkInGarage(v);
+		if (result) v.getATicket();
+		return result;
 	}
 
 }
