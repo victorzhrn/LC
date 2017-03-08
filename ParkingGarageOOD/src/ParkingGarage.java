@@ -14,6 +14,10 @@ public class ParkingGarage {
 		initialize(levels,nums);
 	}
 	
+	/**
+	 * @param levels: number of levels
+	 * @param nums: number of parking slot on each level
+	 */
 	public void initialize(int levels, int nums){
 		slots = new ParkingSlot[levels][nums];
 		emptySlots = nums*levels;

@@ -14,10 +14,12 @@ public class Ticket {
 	
 	public void finish(){
 		end = System.currentTimeMillis();
+		System.out.println("ticket end at: "+start);
 	}
 	
 	public long getParkingTime(){
 		if (end==0L) finish();
+		System.out.println("vehicle parked for: "+end-start);
 		return end-start;
 	}
 
