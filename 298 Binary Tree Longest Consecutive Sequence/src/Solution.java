@@ -17,7 +17,7 @@ public class Solution {
 		if (n == null) {
 			return global_max;
 		} else {
-			System.out.println("parent and child value: " + parrent.val + "," + n.val);
+			
 			if (n.val - parrent.val == 1) {
 				count++;
 				global_max= Math.max(global_max, count);
