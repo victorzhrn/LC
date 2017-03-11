@@ -19,7 +19,7 @@ public class Ticket {
 	
 	public long getParkingTime(){
 		if (end==0L) finish();
-		System.out.println("vehicle parked for: "+end-start);
+		System.out.println("vehicle parked for: "+(end-start));
 		return end-start;
 	}
 

@@ -6,6 +6,9 @@ public class Vehicle {
 		
 	}
 	
+	/**
+	 * start a new ticket for Vehicle
+	 */
 	public void getATicket(){
 		ticket = new Ticket();
 	}

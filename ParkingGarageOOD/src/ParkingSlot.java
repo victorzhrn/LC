@@ -1,7 +1,6 @@
 
 public class ParkingSlot {
-	
-	
+
 	private Vehicle car;
 	
 	public ParkingSlot(){

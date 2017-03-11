@@ -8,8 +8,7 @@ public class Solution {
 		boolean[] a = new boolean[maxDepth];
 		
 		System.out.println(getIndex(0,a,root));
-		
-		
+
 		return 1;
 	}
 	
@@ -45,5 +44,7 @@ public class Solution {
 		}
 		return true;
 	}
+	
+	
 	
 }
